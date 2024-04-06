@@ -1,0 +1,462 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Noto Serif TC", "Manrope", "Noto Sans TC";
+}
+.main {
+    width: 100%;
+    height: 100vh;
+    background-image: url("image/drum_left.jpg");
+    background-size: cover;
+    background-position: top;
+    animation: fade-clear linear;
+    animation-timeline: view();
+    animation-range: exit -10px;
+}
+.main .container{
+    width: 90%;
+    margin: auto;
+    position: relative;
+}
+.main .container .nav{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+.main .container .nav .logo{
+    display: flex;
+    vertical-align: middle;
+}
+.main .container .nav .list{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.main .container .nav a{
+    text-decoration: none;
+    font-size: 30px;
+    font-family: "Manrope";
+    font-weight: 700;
+    text-shadow: 1px 1px 1px #000;
+    color: aliceblue;
+    margin: 0px 40px;
+    transform: translateY(0px);
+    transition: 0.3s;
+}
+.main .container .nav a:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: -5px;
+    height: 0;
+    border-bottom: 1px solid aliceblue;
+    transition-delay: 250ms;
+    transition: 0.3s;
+}
+.main .container .nav a:hover{
+    transform: translateY(-5px);
+}
+.main .container .nav a:hover:after {
+    left: 0;
+    right: 0;
+}
+.main .txt {
+    color: aliceblue;
+    font-size: 28px;
+    position: relative;
+    top: 200px;
+}
+@keyframes fade-clear {
+    25% {opacity: 1;}
+    85%, 100% {opacity: 0;}
+}
+.songs {
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+    background: linear-gradient(#ffffff, rgb(163, 189, 201));
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.songs .wrap {
+    width: 720px;
+    position: absolute;
+    top: 20px;
+    padding: 20px 0 0 0;
+}
+.songs .wrap h1 {
+    text-align: center;
+    color: #333;
+    text-shadow: 0.51px 0.5px rgb(94, 104, 109);
+    padding: 0 0 20px 0;
+}
+.songs .wrap a h2{
+    font-family: "Manrope";
+    color: #333;
+    font-size: 20px;
+}
+.songs .wrap a p {
+    font-family: "Manrope";
+    font-size: 15px;
+    color: #333;
+}
+.songs .wrap:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0px;
+    clear: both;
+}
+
+.timeline li {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 20px 0;
+    position: relative;
+    z-index: 0;
+}
+
+.timeline li:nth-child(odd) {
+    float: left;
+    padding-right: 100px;
+}
+
+.timeline li:nth-child(even) {
+    float: right;
+    padding-left: 100px;
+    transform: translateY(50%);
+}
+
+.timeline li:nth-child(odd)::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    top: 0;
+    height: 100%;
+    background-color: #6c6c6d;
+    right: 0;
+    z-index: 1;
+}
+
+.timeline li:last-child::after {
+    height: 50%;
+}
+
+.timeline li:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #6c6c6d;
+    z-index: 2;
+}
+
+.timeline li:nth-child(odd)::before {
+    right: -10px;
+}
+
+.timeline li:nth-child(even)::before {
+    left: -10px;
+}
+
+.timeline a {
+    display: block;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 0.5px solid #333;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #333; 
+}
+.timeline a:hover {
+    background-color: rgb(21, 55, 34);
+}
+.timeline a:hover h2 {
+    color: #333;
+}
+.timeline a:hover p {
+    color: #333;
+}
+.timeline h2::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100px;
+    background-color: #6c6c6d;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.timeline li:nth-child(odd) h2::after {
+    right: 0;
+}
+.timeline li:nth-child(even) h2::after {
+    left: 0;
+}
+.break_2 {
+    width: 100%;
+    background-color: rgb(163, 189, 201);
+}
+.break_2 .break_2_con{
+    width: 50%;
+}
+.break_2 .break_2_con .text {
+    position: relative;
+    padding: 10px 0 20px 0;
+    color: #ffffffc9;
+    opacity: 0.8;
+    text-align: center;
+    font-size: 60px;
+}
+.member {
+    z-index: -2;
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+.member .item {
+    position: relative;
+    overflow: hidden;
+}
+
+.member img {
+    width: 100%;
+    vertical-align: middle;
+    transition: transform .5s ease;
+}
+
+.member .item_1 img {
+    transform-origin: 20% 20%;
+}
+
+.member .item_2 img {
+    transform-origin: 50% 20%;
+}
+
+.member .item_3 img {
+    transform-origin: 50% 20%;
+}
+
+.member .item_4 img {
+    transform-origin: 50% 20%;
+}
+
+.member .item_5 img {
+    transform-origin: 50% 50%;
+}
+
+.member h2 {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-shadow: 1px 1px 2px #000000;
+    color: #ffffff;
+    display: flex;
+    opacity: 0;
+    justify-content: center;
+    align-items: start;
+    transition: 0.3s ease;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.member .wrap_1 {
+    width: 50%;
+}
+
+.member .wrap_2 {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.member .wrap_2 .item {
+    width: 50%;
+    position: relative;
+}
+
+.item:hover h2 {
+    opacity: 1;
+}
+
+.item:hover .item_1 img {
+    transform: scale(1.5);
+}
+
+.item:hover .item_2 img {
+    transform: scale(1.2);
+}
+
+.item:hover .item_3 img {
+    transform: scale(1.5);
+}
+
+.item:hover .item_4 img {
+    transform: scale(1.15);
+}
+
+.item:hover .item_5 img {
+    transform: scale(1.1);
+}
+.activity {
+    width: 100%;
+    background: linear-gradient(-25deg, rgb(163, 189, 201), rgb(226, 231, 233), rgb(163, 189, 201));
+    position: relative;
+}
+.h1_container{
+    width: 100%;
+    display: flex;
+    margin: auto;
+}
+.activity .h1_con{
+    padding: 30px 0 0 0;
+    width:50%;
+    display: flex;
+    justify-content: center;
+}
+.activity h1 {
+    font-size: 150px;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.act {
+    padding: 50px 0 0 0;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.act_container:not(:last-child) {
+    width: 50%;
+    margin: 0 0 20% 0;
+    transition: transform .5s ease;
+}
+
+.act_container:last-child {
+    width: 50%;
+    margin: 0 0 50px 0;
+    transition: transform .5s ease;
+}
+
+.act_container .item {
+    width: 70%;
+    margin: auto;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+}
+
+.act_container .item_img {
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+}
+
+.act_container .item p {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    margin: -5px 0 0 0;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(49, 42, 39, 0.7);
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+    font-family: "Noto Sans TC";
+    font-size: 20px;
+}
+
+.act_container .item h2 {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0 13px 0;
+    z-index: 5;
+    font-family: "Noto Sans TC";
+    font-weight: 600;
+}
+
+.act_container .item img {
+    width: 100%;
+    margin: auto;
+}
+
+.act_container:hover .item_img p {
+    opacity: 1;
+}
+
+.act_container:nth-child(even) {
+    transform: translateY(70%);
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    background-color: #4b5d6e;
+}
+
+.rec_container {
+    width: 60%;
+    display: flex;
+    margin: auto;
+    padding: 20px;
+}
+
+.rec_con {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.footer .item_1 {
+    padding: 20px;
+}
+
+.footer .item_2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 50px;
+    text-align: center;
+
+}
+
+.footer .item_1 h2 {
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.footer .item_2 h2{
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    font-family: "Manrope";
+}
+
+.footer .item_2 a {
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+}
